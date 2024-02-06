@@ -10,9 +10,9 @@ $(OUTPUT): $(addsuffix .o,$(SRC))
 	$(LINKER) -o $(OUTPUT) $(addsuffix .o,$(SRC)) -no-pie
 
 %.o: %.asm
-	$(ASM) $(FILE_OBJECT_TYPE) $< -o $@
+	$(ASM) -g $(FILE_OBJECT_TYPE) $< -o $@
 
 clean:
-	rm -f $(addsuffix .o,$(SRC)) $(OUTPUT)
+	rm -f -f $(addsuffix .o,$(SRC)) $(OUTPUT)
 
 
