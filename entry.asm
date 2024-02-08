@@ -17,11 +17,18 @@ extern SYSCALL_EXIT
 extern FAIL_ENTRY
 
 extern asm_malloc
+extern asm_free
 
 main:
   enter 0, 0
 
+  ; malloc 20 bytes
+  mov rdi, 20
   call asm_malloc
+
+  ; free 20 bytes
+  mov rdi, rax
+  call asm_free
 
   mov rax, SYSCALL_EXIT 
   xor rdi, rdi

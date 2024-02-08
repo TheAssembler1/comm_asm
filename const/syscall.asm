@@ -2,6 +2,7 @@ section .data
 
 global SYSCALL_READ
 global SYSCALL_WRITE
+global SYSCALL_BRK
 global SYSCALL_EXIT
 
 SYSCALL_READ equ 0
